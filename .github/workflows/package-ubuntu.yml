@@ -14,13 +14,13 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        haxe: [4.3.3]
+        haxe: [4.3.7]
       fail-fast: true
     runs-on: ubuntu-latest
 
     steps:
       # Checkout, install haxe and libs
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
       - uses: krdlab/setup-haxe@v1
         with:
           haxe-version: ${{ matrix.haxe }}
@@ -29,14 +29,14 @@ jobs:
       - run: haxelib list
 
       # Node/NPM commands
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v4
         with:
-          node-version: '14'
+          node-version: '24'
       - run: cd app && npm install
       - run: cd app && npm run pack-linux-x86
 
       # Upload
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v4
         with:
           name: ubuntu-distribution
           path: app/redist/LDtk**installer.AppImage
