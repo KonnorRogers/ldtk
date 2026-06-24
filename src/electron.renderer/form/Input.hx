@@ -1,4 +1,5 @@
 package form;
+import dn.data.LocaleString;
 
 #if macro
 import haxe.macro.Expr;

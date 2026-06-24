@@ -1,4 +1,5 @@
 package ui.modal.dialog;
+import dn.data.LocaleString;
 
 class Confirm extends ui.modal.Dialog {
 	var onConfirm : Null<Void->Void>;

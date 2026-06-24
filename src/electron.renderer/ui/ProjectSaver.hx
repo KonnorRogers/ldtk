@@ -1,4 +1,5 @@
 package ui;
+import dn.data.LocaleString;
 
 private enum SavingState {
 	/* !! WARNING !! The ordering of this enum is used by beginNextState()!  */

@@ -1,4 +1,5 @@
 package ui.modal.dialog;
+import dn.data.LocaleString;
 
 class InputDialog<T> extends ui.modal.Dialog {
 	var jValidate : js.jquery.JQuery;
@@ -8,7 +9,7 @@ class InputDialog<T> extends ui.modal.Dialog {
 	var parser : String->T;
 	var onConfirm : T->Void;
 
-	public function new(desc:dn.data.GetText.LocaleString, ?curValue:T, ?suffix="", ?getError:T->Null<String>, parser:String->T, onConfirm:T->Void) {
+	public function new(desc:LocaleString, ?curValue:T, ?suffix="", ?getError:T->Null<String>, parser:String->T, onConfirm:T->Void) {
 		super("inputDialog");
 
 		this.getError = getError;
